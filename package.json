@@ -1,0 +1,20 @@
+{
+  "name": "The-Ray-Tracer-Challenge",
+  "version": "1.0.0",
+  "description": "Following Jamis Buck's Ray Tracer Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctsstc/The-Ray-Tracer-Challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctsstc/The-Ray-Tracer-Challenge/issues"
+  },
+  "homepage": "https://github.com/ctsstc/The-Ray-Tracer-Challenge#readme"
+}
