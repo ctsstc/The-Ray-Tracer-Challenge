@@ -4,7 +4,8 @@
   "description": "Following Jamis Buck's Ray Tracer Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest watch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/ctsstc/The-Ray-Tracer-Challenge/issues"
   },
-  "homepage": "https://github.com/ctsstc/The-Ray-Tracer-Challenge#readme"
+  "homepage": "https://github.com/ctsstc/The-Ray-Tracer-Challenge#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
