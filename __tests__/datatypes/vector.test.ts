@@ -14,8 +14,23 @@ describe('Vector', () => {
     vector = factoryVector();
   });
 
-  it('is a Tuple', () => {
+  it('subclasses a Tuple', () => {
     expect(vector instanceof Tuple).toEqual(true);
+  });
+
+  // Sub Class Sanity Checks
+  // Redundant, but worth checking
+
+  it('has an x of 4', () => {
+    expect(vector.x).toEqual(4);
+  });
+
+  it('has a y of -4', () => {
+    expect(vector.y).toEqual(-4);
+  });
+
+  it('has a z of 3', () => {
+    expect(vector.z).toEqual(3);
   });
 
   it('has a w of 1 ', () => {
