@@ -1,4 +1,4 @@
-import { TupleType } from "typescript";
+import Tuple from "../../src/datatypes/tuple";
 
 describe('Tuple', () => {
   describe('is a point', () => {
