@@ -33,7 +33,7 @@ describe('Vector', () => {
     expect(vector.z).toEqual(3);
   });
 
-  it('has a w of 1 ', () => {
+  it('has a w of 1', () => {
     expect(vector.w).toEqual(1);
   });
 });

@@ -1,11 +1,11 @@
 import Tuple from "../../src/datatypes/tuple";
 
-const tuplePoint = () => new Tuple(4.3, -4.2, 3.1, 1.0);
-const tupleVector = () => new Tuple(4.3, -4.2, 3.1, 0.0);
+const factoryTuplePoint = () => new Tuple(4.3, -4.2, 3.1, 1.0);
+const factoryTupleVector = () => new Tuple(4.3, -4.2, 3.1, 0.0);
 
 export {
-  tuplePoint,
-  tupleVector
+  factoryTuplePoint,
+  factoryTupleVector
 };
 
 describe('Tuple', () => {
@@ -13,7 +13,7 @@ describe('Tuple', () => {
     let point:Tuple;
 
     beforeAll(() => {
-      point = tuplePoint();
+      point = factoryTuplePoint();
     });
 
     it('has a valid x', () => {
@@ -33,7 +33,7 @@ describe('Tuple', () => {
     let vector:Tuple;
 
     beforeAll(() => {
-      vector = tupleVector();
+      vector = factoryTupleVector();
     });
 
     it('has a valid x', () => {
