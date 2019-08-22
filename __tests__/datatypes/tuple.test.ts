@@ -3,9 +3,14 @@ import Tuple from "../../src/datatypes/tuple";
 const factoryTuplePoint = () => new Tuple(4.3, -4.2, 3.1, 1.0);
 const factoryTupleVector = () => new Tuple(4.3, -4.2, 3.1, 0.0);
 
+function compareTuple(a:Tuple, b:Tuple) {
+  return JSON.stringify(a) == JSON.stringify(b);
+}
+
 export {
   factoryTuplePoint,
-  factoryTupleVector
+  factoryTupleVector,
+  compareTuple
 };
 
 describe('Tuple', () => {
@@ -47,6 +52,17 @@ describe('Tuple', () => {
     });
     it('is a vector', () => {
       expect(vector.w).toEqual(0.0);
+    });
+  });
+  describe('Adding two tuples - a vector and a point', () => {
+    const vector = new Tuple(3, -2, 5, 1);
+    const point = new Tuple(-2, 3, 1, 0);
+
+    it('produces a point given the applied vector', () => {
+      const newPosition = point.move(vector);
+      const expectedPosition = new Tuple(1, 1, 6, 1);
+      const samePosition = compareTuple(newPosition, expectedPosition);
+      expect(samePosition).toEqual(true)
     });
   });
 });
