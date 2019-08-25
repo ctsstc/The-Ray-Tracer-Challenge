@@ -71,4 +71,14 @@ describe('Tuple', () => {
       expect(samePosition).toEqual(true)
     });
   });
+  describe('inverting a tuple', () => {
+    const tuple = new Tuple(1, -2, 3, -4);
+
+    it('becomes the opposite', () => {
+      const expectedTuple = new Tuple(-1, 2, -3, 4);
+      tuple.invert();
+      const theSame = tuple.equals(expectedTuple);
+      expect(theSame).toEqual(true);
+    });
+  });
 });

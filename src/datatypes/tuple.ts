@@ -26,7 +26,7 @@ export default class Tuple {
     return this.add(tuple);
   }
 
-  private invert() {
+  public invert() {
     this.x = this.x *-1;
     this.y = this.y *-1;
     this.z = this.z *-1;
