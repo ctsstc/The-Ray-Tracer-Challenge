@@ -6,7 +6,7 @@ export default class Point extends Tuple {
     super(x, y, z, 0);
   }
 
-  public subtract(point:Point):Vector {
+  public subtractPoint(point:Point):Vector {
     const newX = this.x - point.x;
     const newY = this.y - point.y;
     const newZ = this.z - point.z;

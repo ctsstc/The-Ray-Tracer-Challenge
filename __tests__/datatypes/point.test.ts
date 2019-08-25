@@ -1,6 +1,7 @@
 import Point from "../../src/datatypes/point";
 import Tuple from "../../src/datatypes/tuple";
 import Vector from "../../src/datatypes/vector";
+import { factoryVector } from "./vector.test";
 
 const factoryPoint = () => new Point(4, -4, 3);
 
@@ -38,14 +39,25 @@ describe('Point', () => {
     expect(point.w).toEqual(0);
   });
 
-  describe('Subtracting two points', () => {
+  describe('subtracting two points', () => {
     const point1 = new Point(3, 2, 1);
     const point2 = new Point(5, 6, 7);
 
     it('returns a new vector', () => {
-      const vector = point1.subtract(point2);
+      const vector = point1.subtractPoint(point2);
       const expectedVector = new Vector(-2, -4, -6)
       const theSame = vector.equals(expectedVector);
+      expect(theSame).toEqual(true);
+    });
+  });
+
+  describe('subtracting a vector', () => {
+    const vector = factoryVector();
+
+    it('returns a point', () => {
+      const newPoint = point.subtractVector(vector);
+      const expectedPoint = new Point(1, 2, 3);
+      const theSame = newPoint.equals(expectedPoint);
       expect(theSame).toEqual(true);
     });
   });
