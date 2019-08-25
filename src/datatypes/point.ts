@@ -7,9 +7,12 @@ export default class Point extends Tuple {
   }
 
   public subtractPoint(point:Point):Vector {
-    const newX = this.x - point.x;
-    const newY = this.y - point.y;
-    const newZ = this.z - point.z;
-    return new Vector(newX, newY, newZ);
+    const tuple = this.subtract(point);
+    return new Vector(tuple.x, tuple.y, tuple.z);
+  }
+
+  public subtractVector(vector:Vector):Point {
+    const tuple = this.subtract(vector);
+    return new Point(tuple.x, tuple.y, tuple.z);
   }
 }

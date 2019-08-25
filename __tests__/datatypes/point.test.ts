@@ -56,7 +56,7 @@ describe('Point', () => {
 
     it('returns a point', () => {
       const newPoint = point.subtractVector(vector);
-      const expectedPoint = new Point(1, 2, 3);
+      const expectedPoint = new Point(0, 0, 0);
       const theSame = newPoint.equals(expectedPoint);
       expect(theSame).toEqual(true);
     });

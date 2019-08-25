@@ -20,6 +20,14 @@ export default class Tuple {
     return new Tuple(newX, newY, newZ, TupleType.vector);
   }
 
+  protected subtract(tuple:Tuple):Tuple {
+    const newX = this.x - tuple.x;
+    const newY = this.y - tuple.y;
+    const newZ = this.z - tuple.z;
+    const newW = this.w - tuple.w;
+    return new Tuple(newX, newY, newZ, newW);
+  }
+
   public equals(tuple:any) {
     return JSON.stringify(this) == JSON.stringify(tuple);
   }
