@@ -13,19 +13,24 @@ export default class Tuple {
     public w:number
   ) { }
 
-  public add(vector:Vector):Tuple {
-    const newX = this.x + vector.x;
-    const newY = this.y + vector.y;
-    const newZ = this.z + vector.z;
-    return new Tuple(newX, newY, newZ, TupleType.vector);
+  protected add(tuple:Tuple):Tuple {
+    const newX = this.x + tuple.x;
+    const newY = this.y + tuple.y;
+    const newZ = this.z + tuple.z;
+    const newW = this.w + tuple.w;
+    return new Tuple(newX, newY, newZ, newW);
   }
 
   protected subtract(tuple:Tuple):Tuple {
-    const newX = this.x - tuple.x;
-    const newY = this.y - tuple.y;
-    const newZ = this.z - tuple.z;
-    const newW = this.w - tuple.w;
-    return new Tuple(newX, newY, newZ, newW);
+    tuple.invert();
+    return this.add(tuple);
+  }
+
+  private invert() {
+    this.x = this.x *-1;
+    this.y = this.y *-1;
+    this.z = this.z *-1;
+    this.w = this.w *-1;
   }
 
   public equals(tuple:any) {
