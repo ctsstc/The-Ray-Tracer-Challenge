@@ -13,7 +13,7 @@ export default class Tuple {
     public w:number
   ) { }
 
-  protected add(tuple:Tuple):Tuple {
+  public add(tuple:Tuple):Tuple {
     const newX = this.x + tuple.x;
     const newY = this.y + tuple.y;
     const newZ = this.z + tuple.z;
