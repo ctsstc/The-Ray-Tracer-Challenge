@@ -36,4 +36,19 @@ describe('Vector', () => {
   it('has a w of 1', () => {
     expect(vector.w).toEqual(1);
   });
+
+  describe('comparing', () => {
+    it('is the same', () => {
+      const anotherVector = new Vector(4, -4, 3);
+      const theSame = vector.equals(anotherVector);
+      expect(theSame).toEqual(true);
+    });
+
+    it('is different', () => {
+      const anotherVector = new Vector(1, 2, 3);
+      const theSame = vector.equals(anotherVector);
+      expect(theSame).toEqual(false);
+    });
+  });
+
 });
