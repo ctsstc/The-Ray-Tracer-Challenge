@@ -51,4 +51,16 @@ describe('Vector', () => {
     });
   });
 
+  describe('subtracting a vector', () => {
+    const vector1 = new Vector(3, 2, 1);
+    const vector2 = new Vector(5, 6, 7);
+
+    it('returns a vector', () => {
+      const vector = vector1.subtractVector(vector2);
+      const expectedVector = new Vector(-2, -4, -6);
+      const theSame = vector.equals(expectedVector);
+      expect(theSame).toEqual(true);
+    });
+  });
+
 });
