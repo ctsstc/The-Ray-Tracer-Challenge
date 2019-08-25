@@ -19,4 +19,8 @@ export default class Tuple {
     const newZ = this.z + vector.z;
     return new Tuple(newX, newY, newZ, TupleType.vector);
   }
+
+  public equals(tuple:Tuple) {
+    return JSON.stringify(this) == JSON.stringify(tuple);
+  }
 }

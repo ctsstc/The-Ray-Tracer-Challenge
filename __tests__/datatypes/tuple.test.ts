@@ -3,14 +3,9 @@ import Tuple from "../../src/datatypes/tuple";
 const factoryTuplePoint = () => new Tuple(4.3, -4.2, 3.1, 1.0);
 const factoryTupleVector = () => new Tuple(4.3, -4.2, 3.1, 0.0);
 
-function compareTuple(a:Tuple, b:Tuple) {
-  return JSON.stringify(a) == JSON.stringify(b);
-}
-
 export {
   factoryTuplePoint,
-  factoryTupleVector,
-  compareTuple
+  factoryTupleVector
 };
 
 describe('Tuple', () => {
@@ -58,10 +53,21 @@ describe('Tuple', () => {
     const vector = new Tuple(3, -2, 5, 1);
     const point = new Tuple(-2, 3, 1, 0);
 
+    it('can be compared against another tuple', () => {
+      const anotherTuple = new Tuple(3, -2, 5, 1);
+      const theSame = vector.equals(anotherTuple);
+      expect(theSame).toEqual(true);
+    });
+
+    it('is not the same when values do not match', () => {
+      const theSame = vector.equals(point);
+      expect(theSame).toEqual(false);
+    });
+
     it('produces a point given the applied vector', () => {
       const newPosition = point.add(vector);
       const expectedPosition = new Tuple(1, 1, 6, 1);
-      const samePosition = compareTuple(newPosition, expectedPosition);
+      const samePosition = newPosition.equals(expectedPosition);
       expect(samePosition).toEqual(true)
     });
   });
