@@ -20,7 +20,7 @@ export default class Tuple {
     return new Tuple(newX, newY, newZ, TupleType.vector);
   }
 
-  public equals(tuple:Tuple) {
+  public equals(tuple:any) {
     return JSON.stringify(this) == JSON.stringify(tuple);
   }
 }
