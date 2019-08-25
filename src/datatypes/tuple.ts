@@ -13,7 +13,7 @@ export default class Tuple {
     public w:number
   ) { }
 
-  public move(vector:Vector):Tuple {
+  public add(vector:Vector):Tuple {
     const newX = this.x + vector.x;
     const newY = this.y + vector.y;
     const newZ = this.z + vector.z;

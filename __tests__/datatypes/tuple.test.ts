@@ -59,7 +59,7 @@ describe('Tuple', () => {
     const point = new Tuple(-2, 3, 1, 0);
 
     it('produces a point given the applied vector', () => {
-      const newPosition = point.move(vector);
+      const newPosition = point.add(vector);
       const expectedPosition = new Tuple(1, 1, 6, 1);
       const samePosition = compareTuple(newPosition, expectedPosition);
       expect(samePosition).toEqual(true)
